@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:55:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/08 16:34:55 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:07:26 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,22 @@ char	*ft_extract_line(char *storage)
 char	*ft_save_remaining(char *storage)
 {
 	char	*to_save;
+	size_t	len;
+	size_t	i;
 
+	len = 0;
+	i = 0;
 	to_save = ft_strchr(storage, '\n');
-	return (to_save);
+	len = ft_strlen(to_save);
+	// RESET STORAGE
+	storage = ft_calloc(1,1);
+	storage[0] = '\0';
+	while (i < len)
+	{
+		storage[i] = to_save[i + 1];
+		i++;
+	}
+	return (storage);
 }
 
 char	*get_next_line(int fd)
@@ -69,6 +82,7 @@ char	*get_next_line(int fd)
 	static char	*storage;
 	char		*read;
 	char		*res;
+	char		*to_save;
 
 	res = malloc(1);
 	res[0] = '\0';
@@ -78,8 +92,9 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	read = ft_read_to_new_line(fd, storage);
-	ft_save_remaining(read);
 	res = ft_extract_line(read);
+	storage = ft_save_remaining(read);
+	// printf(":%s:", storage);
 	return (res);
 }
 
