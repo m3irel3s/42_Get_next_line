@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:55:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/08 17:07:26 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:27:13 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_read_to_new_line(int fd, char *storage)
 {
 	ssize_t	bytes_read;
 	char	*temp;
-
 	temp = malloc(1);
 	temp[0] = '\0';
 	bytes_read = 1;
@@ -83,7 +82,7 @@ char	*get_next_line(int fd)
 	char		*read;
 	char		*res;
 	char		*to_save;
-
+	printf("storage call:%s:\n", storage);
 	res = malloc(1);
 	res[0] = '\0';
 	storage = ft_calloc(sizeof(char), (BUFFER_SIZE + 1));
@@ -94,7 +93,6 @@ char	*get_next_line(int fd)
 	read = ft_read_to_new_line(fd, storage);
 	res = ft_extract_line(read);
 	storage = ft_save_remaining(read);
-	// printf(":%s:", storage);
 	return (res);
 }
 
@@ -104,9 +102,9 @@ int	main(void)
 	char	*res1;
 	int	fd = open("tests/test3.txt", O_RDONLY);
 	res = get_next_line(fd);
-	// res1 = get_next_line(fd);
+	res1 = get_next_line(fd);
 	printf("%s", res);
-	// printf("%s", res1);
+	printf("%s", res1);
 	free(res);
-	// free(res1);
+	free(res1);
 }
