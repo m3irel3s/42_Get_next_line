@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:09:21 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/07 17:32:37 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:53:15 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 //        DEFAULT VALUE FOR BUFFER_SIZE         //
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
+# define BUFFER_SIZE 5
 # endif
 
 //             MANDATORY FUNCTIONS              //
@@ -31,7 +31,10 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
-void	ft_bzero(void *s, size_t n);
+char	*ft_read_to_newline(int fd, char *storage);
+char	*ft_extract_line(char *storage);
+char	*ft_save_remaining(char *storage);
+
 
 
 # endif

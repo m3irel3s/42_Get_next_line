@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:10:27 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/07 16:51:11 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/08 16:34:57 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,20 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	size_t	alloc_space;
+	size_t	i;
+	char	*p;
 
 	alloc_space = nmemb * size;
 	ptr = malloc(alloc_space);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, alloc_space);
+	i = 0;
+	p = (char *)ptr;
+	while (i < alloc_space)
+	{
+		p[i] = '\0';
+		i++;
+	}
 	return (ptr);
 }
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-	char	*p;
 
-	i = 0;
-	p = s;
-	while (i < n)
-		p[i++] = '\0';
-}
