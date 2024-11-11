@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:09:21 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/08 17:02:06 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:59:30 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_read_to_newline(int fd, char *storage);
 char	*ft_extract_line(char *storage);
 char	*ft_save_remaining(char *storage);
-
-
+char	*ft_strdup(const char *s);
 
 # endif

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:10:27 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/08 16:34:57 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:59:32 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,24 +68,23 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *s)
 {
-	void	*ptr;
-	size_t	alloc_space;
+	size_t	len;
 	size_t	i;
 	char	*p;
 
-	alloc_space = nmemb * size;
-	ptr = malloc(alloc_space);
-	if (ptr == NULL)
-		return (NULL);
 	i = 0;
-	p = (char *)ptr;
-	while (i < alloc_space)
+	len = ft_strlen(s);
+	p = malloc(sizeof(char) * (len + 1));
+	if (p == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		p[i] = '\0';
+		p[i] = s[i];
 		i++;
 	}
-	return (ptr);
+	p[i] = '\0';
+	return (p);
 }
 
