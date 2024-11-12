@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:55:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/12 11:22:30 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:12:21 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,11 @@ char	*ft_save_remaining(char *storage)
 
 char	*get_next_line(int fd)
 {
-	static char	*storage = NULL;
+	static char	*storage;
 	char		*res;
 
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
 	if (!storage)
 	{
 		storage = malloc(1);
@@ -88,24 +90,8 @@ char	*get_next_line(int fd)
 			return (free(storage), NULL);
 		storage[0] = '\0';
 	}
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
 	storage = ft_read_to_new_line(fd, storage);
 	res = ft_extract_line(storage);
 	storage = ft_save_remaining(storage);
 	return (res);
 }
-
-/* int	main(void)
-{
-	char	*res;
-	int	fd = open("tests/test3.txt", O_RDONLY);
-	// res = get_next_line(fd);
-	// printf("%s", res);
-	// free(res);
-	while ((res = get_next_line(fd)))
-	{
-		printf("%s", res);
-		free(res);
-	}
-} */
