@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:09:21 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/12 11:21:20 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:27:47 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,14 @@
 
 //             MANDATORY FUNCTIONS              //
 char	*get_next_line(int fd);
+char	*ft_read_to_new_line(int fd, char *storage);
+char	*ft_extract_line(char *storage);
+char	*ft_save_remaining(char *storage);
 
 //                    UTILS                     //
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
-void	*ft_calloc(size_t nmemb, size_t size);
-char	*ft_read_to_newline(int fd, char *storage);
-char	*ft_extract_line(char *storage);
-char	*ft_save_remaining(char *storage);
 char	*ft_strdup(const char *s);
 
 #endif
