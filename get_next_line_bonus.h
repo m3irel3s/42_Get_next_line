@@ -6,13 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:36:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/12 11:08:53 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:22:21 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS
 # define GET_NEXT_LINE_BONUS
-
-
 
 #endif

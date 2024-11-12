@@ -6,21 +6,21 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:09:21 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/11 17:59:30 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:21:20 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef FT_GET_NEXT_LINE_H
-# define FT_GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <fcntl.h>
 
 //        DEFAULT VALUE FOR BUFFER_SIZE         //
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 5
+#  define BUFFER_SIZE 5
 # endif
 
 //             MANDATORY FUNCTIONS              //
@@ -36,4 +36,4 @@ char	*ft_extract_line(char *storage);
 char	*ft_save_remaining(char *storage);
 char	*ft_strdup(const char *s);
 
-# endif
+#endif

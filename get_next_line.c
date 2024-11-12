@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:55:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/12 11:11:03 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:22:30 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_read_to_new_line(int fd, char *storage)
 		if (bytes_read == -1)
 			return (free(temp), free(storage), NULL);
 		if (bytes_read == 0)
-			break;
+			break ;
 		temp[bytes_read] = '\0';
 		storage = ft_strjoin(storage, temp);
 	}
@@ -43,7 +43,7 @@ char	*ft_extract_line(char *storage)
 
 	i = 0;
 	j = 0;
-	if(!storage || !*storage)
+	if (!storage || !*storage)
 		return (NULL);
 	while (storage[i] != '\n' && storage[i])
 		i++;

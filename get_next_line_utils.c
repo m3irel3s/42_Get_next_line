@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:10:27 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/12 11:11:06 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:17:48 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,3 @@ char	*ft_strdup(const char *s)
 	p[i] = '\0';
 	return (p);
 }
-
