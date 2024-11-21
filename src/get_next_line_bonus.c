@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 11:55:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/12 15:12:21 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/11/12 11:16:57 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/11/12 15:16:16 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../inc/get_next_line_bonus.h"
 
 char	*ft_read_to_new_line(int fd, char *storage)
 {
@@ -78,20 +78,20 @@ char	*ft_save_remaining(char *storage)
 
 char	*get_next_line(int fd)
 {
-	static char	*storage;
+	static char	*storage[1024];
 	char		*res;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (!storage)
+	if (!storage[fd])
 	{
-		storage = malloc(1);
-		if (!storage)
-			return (free(storage), NULL);
-		storage[0] = '\0';
+		storage[fd] = malloc(1);
+		if (!storage[fd])
+			return (free(storage[fd]), NULL);
+		storage[fd][0] = '\0';
 	}
-	storage = ft_read_to_new_line(fd, storage);
-	res = ft_extract_line(storage);
-	storage = ft_save_remaining(storage);
+	storage[fd] = ft_read_to_new_line(fd, storage[fd]);
+	res = ft_extract_line(storage[fd]);
+	storage[fd] = ft_save_remaining(storage[fd]);
 	return (res);
 }
