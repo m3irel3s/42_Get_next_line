@@ -1,4 +1,4 @@
-# 📝 **get_next_line**
+# 📝 **Get_next_line**
 
 ![Screenshot from 2024-12-05 15-02-20](https://github.com/user-attachments/assets/89cac72d-3839-404c-8d14-17c250199a1b)
 
