@@ -7,7 +7,7 @@
 
 ## 🧠 **Memory Leaks Explanation**
 
-### 📚 **What is a Memory Leak?**
+### ⚡ **What is a Memory Leak?**
 A **memory leak** happens when a program allocates memory dynamically (using functions like `malloc`, `calloc`, or `realloc`) but fails to release it properly using `free`. As a result, the memory becomes inaccessible or lost because it is no longer referenced, yet it has not been freed for reuse by the system.
 
 ### ⚠️ **Consequences of Memory Leaks**
