@@ -1,6 +1,6 @@
 # 📝 **Get_next_line**
 
-![Screenshot from 2024-12-05 14-52-03](https://github.com/user-attachments/assets/7a87e68c-bc1b-4ae2-8db2-2768041615e0)
+![Screenshot from 2024-12-05 15-02-20](https://github.com/user-attachments/assets/89cac72d-3839-404c-8d14-17c250199a1b)
 
 ## 📚 Overview
 **Get_next_line** is a C function designed to read a file or standard input line-by-line. This project is centered around efficient file handling and memory management, providing a robust solution for reading data streams in C.
